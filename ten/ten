@@ -1,0 +1,15 @@
+#!/bin/bash
+resetStyle='\e[0m'
+RED='\e[1;91m'
+
+function decode() {
+
+    msg=$1
+    for (( i = 1; i <= ; i++ )); do
+        msg=$(echo $msg | base64 -d)
+        echo -e "${RED}#${i}/Decoded:${resetStyle} HE{$msg}"
+        echo ""
+    done
+}
+
+decode "Vm0wd2QyUXlWa2hWV0doVVYwZG9XRll3Wkc5V1JsbDNXa1pPVlUxV2NEQlVWbHBQWVVaS2MxTnNXbFpOYm1oUVZqSjRZV014VG5OWGJGcE9ZbTFvVVZkV1kzaFRNVWw0V2toR1VtSklRazlWYWtGM1pVWmFjbFZyWkZSTmJFcFlWVzAxUzFsV1NuTmpTRUpXWWxoU00xUnRlR0ZqTVdSMFVteGtUbFp1UWxoV1JscFhWakpHU0ZadVJsSldSM001"
